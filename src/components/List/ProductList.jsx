@@ -30,8 +30,10 @@ const ProductList = () => {
         <thead>
           <tr>
             <th>No</th>
-            <th>Product Name</th>
-            <th>Price</th>
+            <th>Kode Product</th>
+            <th>Nama Product</th>
+            <th>Jumlah</th>
+            <th>Harga</th>
             <th>Created By</th>
             <th>Actions</th>
           </tr>
@@ -40,12 +42,16 @@ const ProductList = () => {
           {products.map((product, index) => (
             <tr key={product.uuid}>
               <td>{index + 1}</td>
-              <td>{product.name}</td>
-              <td>{product.price}</td>
+              <td>{product.kodeProduct}</td>
+              <td>{product.namaProduct}</td>
+              <td>{product.jumlah}</td>
+              <td>{product.harga}</td>
               <td>{product.user.name}</td>
               <td>
                 <Link
-                  to={`/products/edit/${product.uuid}`}
+                  to={`/products/edit/${product.kodeProduct}`}
+                  // onClick={alert(`${product.kodeProduct}`)}
+                  // onClick={console.log("eror")}
                   className="button is-small is-info"
                 >
                   Edit

@@ -45,6 +45,8 @@ const FormEditUser = () => {
       }
     }
   };
+
+  console.log(email)
   return (
     <div>
       <h1 className="title">Users</h1>
@@ -112,6 +114,8 @@ const FormEditUser = () => {
                     >
                       <option value="admin">Admin</option>
                       <option value="user">User</option>
+                      <option value="marketing">Marketing</option>
+                      <option value="operator">Operator</option>
                     </select>
                   </div>
                 </div>

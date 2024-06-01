@@ -95,6 +95,10 @@ const FormAddUser = () => {
                     >
                       <option value="admin">Admin</option>
                       <option value="user">User</option>
+                      <option value="marketing">Marketing</option>
+                      <option value="operator">Operator</option>
+                      {/* <option value="admin">User</option> */}
+                      {/* <option value="master">Master</option> */}
                     </select>
                   </div>
                 </div>
