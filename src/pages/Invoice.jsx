@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
-import Layout from "./Layout";
-import Userlist from "../components/List/Userlist";
+import React, {useEffect} from 'react'
+import Layout from './Layout'
+import InvoiceList from '../components/List/InvoiceList'
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
 
-const Users = () => {
+const Invoice = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isError, user } = useSelector((state) => state.auth);
+  const { isError } = useSelector((state) => state.auth);
 
   useEffect(() => {
     dispatch(getMe());
@@ -18,15 +18,12 @@ const Users = () => {
     if (isError) {
       navigate("/");
     }
-    if (user && user.role !== "master") {
-      navigate("/dashboard");
-    }
-  }, [isError, user, navigate]);
+  }, [isError, navigate]);
   return (
     <Layout>
-      <Userlist />
+        <InvoiceList />
     </Layout>
-  );
-};
+  )
+}
 
-export default Users;
+export default Invoice

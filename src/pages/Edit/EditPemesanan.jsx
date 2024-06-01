@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
-import Layout from "./Layout";
-import Userlist from "../components/List/Userlist";
+import Layout from "../Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getMe } from "../features/authSlice";
+import { getMe } from "../../features/authSlice";
+import FormEditPemesanan from "../../components/FormEdit/FormEditPemesanan";
 
-const Users = () => {
+const EditPemesanan = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isError, user } = useSelector((state) => state.auth);
+  const { isError } = useSelector((state) => state.auth);
 
   useEffect(() => {
     dispatch(getMe());
@@ -18,15 +18,13 @@ const Users = () => {
     if (isError) {
       navigate("/");
     }
-    if (user && user.role !== "master") {
-      navigate("/dashboard");
-    }
-  }, [isError, user, navigate]);
+  }, [isError, navigate]);
   return (
     <Layout>
-      <Userlist />
+      {/* <FormEditProduct /> */}
+      <FormEditPemesanan />
     </Layout>
   );
 };
 
-export default Users;
+export default EditPemesanan;

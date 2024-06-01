@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import Layout from "./Layout";
-import ProductList from "../components/List/ProductList";
+import React,{useEffect} from 'react'
+import Layout from './Layout'
+import PemesananList from '../components/List/PemesananList'
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
 
-const Products = () => {
+const Pemesanan = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -20,10 +20,10 @@ const Products = () => {
     }
   }, [isError, navigate]);
   return (
-    <Layout>
-      <ProductList />
-    </Layout>
-  );
-};
+      <Layout>
+        <PemesananList />
+      </Layout>
+  )
+}
 
-export default Products;
+export default Pemesanan

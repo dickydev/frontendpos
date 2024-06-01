@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
-import Layout from "./Layout";
-import FormEditProduct from "../components/FormEditProduct";
+import Layout from "../Layout";
+// import FormAddProduct from "../components/FormAddProduct";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getMe } from "../features/authSlice";
+import { getMe } from "../../features/authSlice";
+import FormAddInvoice from "../../components/FormAdd/FormAddInvoice";
+// import FormAddCustomer from "../../components/FormAdd/FormAddCustomer";
+// import FormAddPemesanan from "../../components/FormAdd/FormAddPemesanan";
 
-const EditProduct = () => {
+const AddInvoice = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -21,9 +24,9 @@ const EditProduct = () => {
   }, [isError, navigate]);
   return (
     <Layout>
-      <FormEditProduct />
+      <FormAddInvoice />
     </Layout>
   );
 };
 
-export default EditProduct;
+export default AddInvoice;
